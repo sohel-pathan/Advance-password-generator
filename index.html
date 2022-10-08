@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icon -->
+    <script
+      src="https://kit.fontawesome.com/38f8bca810.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- script -->
+    <script defer src="./script.js"></script>
+
+    <!-- style -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- title -->
+    <title>Advance password generator</title>
+  </head>
+  <body>
+    <!-- main wrapper -->
+    <div class="wrapper">
+      <h2 class="heading">Password Generator</h2>
+      <div class="password__cont">
+        <div class="password pass__opacity" id="passs">P4$5WOrD!</div>
+        <div class="copy__icon" id="copy__btn">
+          <i class="fa-regular fa-copy fa-lg"></i>
+        </div>
+      </div>
+      <div class="password__setter">
+        <div class="password__char">
+          <div>
+            <div class="text">Character length</div>
+            <div class="pass__length">0</div>
+          </div>
+          <input
+            name="range"
+            class="slider"
+            min="0"
+            max="100"
+            type="range"
+            value="0"
+            id="ranger"
+          />
+        </div>
+        <ul class="setter__list">
+          <li class="checkbox__item">
+            <input type="checkbox" id="" name="uppercase" class="check__box" />
+            <label for="uppercase">Include Uppercase Letters</label>
+          </li>
+          <li class="checkbox__item">
+            <input type="checkbox" id="" name="lowercase" class="check__box" />
+            <label>Include Lowercase Letters</label>
+          </li>
+          <li class="checkbox__item">
+            <input type="checkbox" id="" name="number" class="check__box" />
+            <label>Include Numbers</label>
+          </li>
+          <li class="checkbox__item">
+            <input type="checkbox" id="" name="symbol" class="check__box" />
+            <label>Include Symbols</label>
+          </li>
+        </ul>
+        <div class="strength">
+          <div class="strength__text">STRENGTH</div>
+          <div id="quality" class="strength__quality"></div>
+          <div class="bar__div">
+            <span class="strength__bars"></span>
+            <span class="strength__bars"></span>
+            <span class="strength__bars"></span>
+            <span class="strength__bars"></span>
+          </div>
+        </div>
+        <button class="generate__btn" name="btn" id="generate">
+          GENERATE <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

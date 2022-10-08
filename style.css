@@ -1,0 +1,352 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input,
+button,
+label {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* css variable */
+:root {
+  --white: #eae6e5;
+  --light-dark: #24232c;
+  --light-green: #a4ffaf;
+  --dark: #18171f;
+}
+
+html {
+  font-size: 62.5%; /* 1rem equal to 10px*/
+}
+
+/* css body */
+body {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  min-height: 100vh;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(#14131b 0%, #08070b 100%);
+  display: grid;
+  place-items: center;
+}
+
+/* main wrapper */
+.wrapper {
+  max-width: 420px;
+  color: var(--white);
+  position: relative;
+}
+
+.heading {
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 2rem;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+/* password container and copy */
+.password__cont {
+  padding-left: 9px;
+  padding-right: 20px;
+  height: 60px;
+  background-color: var(--light-dark);
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.password {
+  display: flex;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  height: 100%;
+  font-size: 2rem;
+  color: var(--white);
+  border-left: 2px solid var(--light-dark);
+  padding-left: 9px;
+  transition: 0.25s;
+}
+
+.password.copy__alert {
+  color: var(--light-green);
+  border-left: 2px solid var(--light-green);
+}
+
+.pass__opacity {
+  opacity: 0.6;
+}
+
+.password__cont > .copy__icon {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  display: grid;
+  place-items: center end;
+}
+
+.password__cont > .copy__icon > i {
+  color: var(--light-green);
+  cursor: pointer;
+
+  /*  */
+}
+
+.password__cont > .copy__icon > i:hover {
+  transition: 0.25s;
+}
+
+/*  password controller*/
+.password__setter {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--light-dark);
+}
+
+.password__char {
+  padding-bottom: 30px;
+}
+
+.password__char > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.pass__length {
+  font-size: 2.5rem;
+  color: var(--light-green);
+}
+
+/* slider custom css */
+#ranger {
+  background: linear-gradient(to right, #a4ffaf 0%, #14141b 0%, #14141b 100%);
+  height: 6px;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background 450ms ease-in;
+}
+
+#ranger::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  cursor: pointer;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+#ranger::-webkit-slider-thumb:hover,
+#ranger::-webkit-slider-thumb:focus,
+#ranger::-webkit-slider-thumb:active {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  border: 2px solid var(--light-green);
+  background-color: var(--dark);
+}
+
+#ranger::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#ranger::-moz-range-thumb:hover,
+#ranger::-moz-range-thumb:focus,
+#ranger::-moz-range-thumb:active {
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+  border: 2px solid var(--light-green);
+  background-color: var(--dark);
+}
+
+/* checkboxes list */
+.setter__list {
+  padding-bottom: 10px;
+}
+
+.checkbox__item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+/* checkbox custom css */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: none;
+  font: inherit;
+  color: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: 0.15em solid var(--white);
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 0.1em;
+  transform: translateY(-0.075em);
+  /*center*/
+  display: grid;
+  place-content: center;
+}
+
+/* hover only for big screen */
+@media (min-width: 420px) {
+  input[type="checkbox"]:hover {
+    border-color: var(--light-green);
+  }
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--light-green);
+  background-color: var(--light-green);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  box-shadow: inset 1em 1em var(--dark);
+  transform-origin: bottom left;
+  -webkit-clip-path: polygon(
+    14% 44%,
+    0 65%,
+    50% 100%,
+    100% 16%,
+    80% 0%,
+    43% 62%
+  );
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transition: 120ms transform ease-in-out;
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* password strength box */
+.strength {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 60px;
+  padding-inline: 15px;
+  background-color: var(--dark);
+  margin-bottom: 25px;
+}
+
+.strength__text {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.strength__quality {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  text-align: end;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bar__div {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.strength__bars {
+  margin-left: 6px;
+  width: 7px;
+  height: 23px;
+  border: 1px solid var(--white);
+}
+
+.strength__bars.strong {
+  background-color: #d4b710;
+}
+.strength__bars.good {
+  background-color: #d6d31d;
+}
+.strength__bars.too__weak {
+  background-color: #f64a4a;
+}
+.strength__bars.weak {
+  background-color: #df741d;
+}
+
+/* password generate__btn */
+.generate__btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--light-green);
+  border: 2px solid var(--light-green);
+  color: var(--dark);
+  transition: 0.25s;
+}
+
+.generate__btn .fa-solid {
+  padding-left: 3px;
+}
+
+.generate__btn:hover {
+  background-color: var(--light-dark);
+  color: var(--light-green);
+  transition: 0.25s;
+}
+
+@media (max-width: 420px) {
+  body {
+    place-content: start center;
+  }
+  .wrapper {
+    padding-top: 20px;
+    width: 98vw;
+  }
+  .password__setter {
+    padding: 20px 15px;
+  }
+  .password__cont {
+    padding-left: 7px;
+    padding-right: 15px;
+  }
+  .password {
+    padding-left: 6px;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 55%;
+  }
+}
